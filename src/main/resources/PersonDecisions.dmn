@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_E9F4CB52-FBBF-46D1-BBC7-8046B6F177E7" id="_4E3A5BB0-2EBD-450B-96F8-9311465E2986" name="PersonDecisions" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0">
+  <itemDefinition id="_F4FD7003-6AF4-492B-AB6E-D62F81215187" name="tPerson" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+    <itemComponent id="_BC2A4327-9138-4C9C-88D2-F8166AEFFF7F" name="Age" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>number</typeRef>
+    </itemComponent>
+    <itemComponent id="_544D9166-6F11-4138-ABF2-66D46FBBF855" name="Name" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>string</typeRef>
+    </itemComponent>
+    <itemComponent id="_5055BDAC-3AF0-4C12-9DE4-928F952EE2DF" name="Adult" isCollection="false" typeLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/">
+      <typeRef>boolean</typeRef>
+    </itemComponent>
+  </itemDefinition>
+  <inputData name="Person" id="_8A3DAF4C-1D33-4484-9EA9-40F67053716A">
+    <variable name="Person" id="_087D4A29-737E-43E8-A6DC-67A43619E8C8" typeRef="tPerson" />
+  </inputData>
+  <decision name="isAdult" id="_66414D06-5A32-44ED-8CD9-2D4BF23E3AA5">
+    <variable name="isAdult" id="_F3058023-FBF6-46AD-A9D9-C4EDB54C66EE" typeRef="boolean" />
+    <informationRequirement id="_8C6618F7-B20D-402A-AF67-11EF1FCE3379">
+      <requiredInput href="#_8A3DAF4C-1D33-4484-9EA9-40F67053716A" />
+    </informationRequirement>
+    <decisionTable id="_7DCA5055-C0BB-46C2-B723-50DC45225647" typeRef="boolean" hitPolicy="UNIQUE" label="isAdult">
+      <input id="_F1BB17A5-679C-420F-8F1D-42C42E6B1458">
+        <inputExpression id="_16B28FC1-0386-4426-9D97-2034CEF28ADC" typeRef="number">
+          <text>Person.Age</text>
+        </inputExpression>
+      </input>
+      <output id="_63988104-F979-4EB6-96FF-ACAB3BC0071D" name="Output-1" />
+      <annotation name="Annotations" />
+      <rule id="_67F9D554-5247-4E3B-924E-B8E611B3CCA4">
+        <inputEntry id="_161E9905-8ACC-4A48-9106-F9D568D8EF83">
+          <text>&gt;18</text>
+        </inputEntry>
+        <outputEntry id="_3FC1A453-33CE-45B7-A79D-AA4603F2B518">
+          <text>true</text>
+        </outputEntry>
+        <annotationEntry>
+          <text>// Your annotations here</text>
+        </annotationEntry>
+      </rule>
+      <rule id="_AD227E03-5D67-41EC-92F8-8C0A72C61969">
+        <inputEntry id="_289D5F88-8F46-4FCC-9395-77E9FDBEDEDF">
+          <text>&lt;=18</text>
+        </inputEntry>
+        <outputEntry id="_11139F6F-E68E-4A1D-99DA-AA3438C7FDAA">
+          <text>false</text>
+        </outputEntry>
+        <annotationEntry>
+          <text></text>
+        </annotationEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_4CBEE083-3827-4790-97B0-536426700B01" name="Default DRD" useAlternativeInputDataShape="false">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_7DCA5055-C0BB-46C2-B723-50DC45225647">
+            <kie:width>60</kie:width>
+            <kie:width>118</kie:width>
+            <kie:width>118</kie:width>
+            <kie:width>240</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="_7112A76C-955C-47AC-A671-EE3CE622E5C5" dmnElementRef="_8A3DAF4C-1D33-4484-9EA9-40F67053716A" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="120" y="60" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="_659847EF-BA7F-415C-B32B-47AEEBD2A953" dmnElementRef="_66414D06-5A32-44ED-8CD9-2D4BF23E3AA5" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="420" y="60" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="_79E8C3D9-51FB-4801-97BF-D25E79EB6CBB" dmnElementRef="_8C6618F7-B20D-402A-AF67-11EF1FCE3379" sourceElement="_7112A76C-955C-47AC-A671-EE3CE622E5C5" targetElement="_659847EF-BA7F-415C-B32B-47AEEBD2A953">
+        <di:waypoint x="200" y="100" />
+        <di:waypoint x="420" y="100" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
