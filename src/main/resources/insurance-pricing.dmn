@@ -102,21 +102,21 @@
         <dmndi:DMNStyle id="_3A23DABF-71A5-4FD2-AA22-5062DADA68BA" fontSize="15" fontFamily="Georgia">
           <dmndi:StrokeColor blue="18" green="18" red="186" />
         </dmndi:DMNStyle>
-        <dc:Bounds x="260" y="120" width="80" height="100" />
+        <dc:Bounds x="280" y="80" width="80" height="100" />
       </dmndi:DMNShape>
       <dmndi:DMNShape id="_B40B04FC-DA9B-46A9-A9AC-DE97E9679F3A" dmnElementRef="_14C75636-256C-415F-B0B1-046C103F6175" isCollapsed="false" isListedInputData="false">
-        <dc:Bounds x="260" y="260" width="80" height="100" />
+        <dc:Bounds x="280" y="220" width="80" height="100" />
       </dmndi:DMNShape>
       <dmndi:DMNShape id="_5EEF8806-5DBC-42C3-809B-529809FFD121" dmnElementRef="_3D58D6F2-CC40-4BBB-86E6-F5EDDD8A5FAB" isCollapsed="false" isListedInputData="false">
-        <dc:Bounds x="540" y="240" width="160" height="80" />
+        <dc:Bounds x="500" y="100" width="160" height="80" />
       </dmndi:DMNShape>
       <dmndi:DMNEdge id="_1071A49B-9A02-492B-A0E9-EBD40EE6928B" dmnElementRef="_B725B9AE-5579-49C2-A6E5-26D8AABB4A6F" sourceElement="_B40B04FC-DA9B-46A9-A9AC-DE97E9679F3A" targetElement="_5EEF8806-5DBC-42C3-809B-529809FFD121">
-        <di:waypoint x="340" y="310" />
-        <di:waypoint x="540" y="280" />
+        <di:waypoint x="360" y="270" />
+        <di:waypoint x="500" y="140" />
       </dmndi:DMNEdge>
       <dmndi:DMNEdge id="_A0D6080F-193E-4D2E-BA27-F2C82DC452D8" dmnElementRef="_514E7FFA-DCDD-40E1-A306-C9B36B70C488" sourceElement="_315413FB-A5F2-4890-8EEE-8797C9E791D4" targetElement="_5EEF8806-5DBC-42C3-809B-529809FFD121">
-        <di:waypoint x="340" y="170" />
-        <di:waypoint x="540" y="280" />
+        <di:waypoint x="360" y="130" />
+        <di:waypoint x="500" y="140" />
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
